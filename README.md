@@ -32,11 +32,16 @@ sentences = load_dataset("LKAusagi/VietMuong", "sentence_pairs")   # SentenceM, 
 words = load_dataset("LKAusagi/VietMuong", "word_pairs")            # WordM, WordV
 ```
 
-Local CSV files with the same columns can be used instead with
-`--sentence_file` and `--word_file`.
+Access to the dataset requires accepting its terms of use on the
+[dataset page](https://huggingface.co/datasets/LKAusagi/VietMuong). After accepting,
+log in once on the machine that runs the code:
+
+```bash
+hf auth login        # or: export HF_TOKEN=<your access token>
+```
 
 The data were extracted from a copyrighted printed dictionary. Read
-[DATA_NOTICE.md](DATA_NOTICE.md) before using or redistributing them.
+[DATA_NOTICE.md](DATA_NOTICE.md) before using them, and do not redistribute them.
 
 ## Installation
 
@@ -120,16 +125,8 @@ versions, a run reproduces its BLEU and its predictions exactly.
 
 ## Citation
 
-```bibtex
-@inproceedings{lekha2026vietmuong,
-  title     = {VietMuong: A Bilingual Corpus and Translation Benchmark for Vietnamese--Muong Machine Translation},
-  author    = {Le Kha, An and Tran Ham, Duong and Pham Xuan, Tri},
-  booktitle = {Proceedings of the 2026 RIVF International Conference on Computing and Communication Technologies (RIVF)},
-  year      = {2026}
-}
-```
-
-Please also cite the source dictionary (see [DATA_NOTICE.md](DATA_NOTICE.md)).
+Citation details will be added when the paper is published. When using the data,
+also credit the source dictionary (see [DATA_NOTICE.md](DATA_NOTICE.md)).
 
 ## License
 

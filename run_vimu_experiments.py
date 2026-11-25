@@ -500,7 +500,15 @@ def resolve_data_files(sentence_file: Optional[str], word_file: Optional[str],
     def fetch(name: str) -> str:
         return hf_hub_download(repo_id=HF_DATASET_ID, filename=name,
                                repo_type="dataset", revision=revision)
-    return sentence_file or fetch(HF_SENTENCE_FILE), word_file or fetch(HF_WORD_FILE)
+    try:
+        return sentence_file or fetch(HF_SENTENCE_FILE), word_file or fetch(HF_WORD_FILE)
+    except Exception as e:                      # gated dataset without accepted terms / login
+        if "Gated" in type(e).__name__ or "401" in str(e) or "403" in str(e):
+            raise SystemExit(
+                f"Access to {HF_DATASET_ID} requires accepting its terms of use: open "
+                f"https://huggingface.co/datasets/{HF_DATASET_ID}, accept them, then run "
+                f"`hf auth login` (or set HF_TOKEN) and start the script again.") from e
+        raise
 
 
 def load_frames(sentence_file: str, word_file: str) -> Tuple[pd.DataFrame, pd.DataFrame]:

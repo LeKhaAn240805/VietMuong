@@ -5,8 +5,9 @@ The MIT license in [LICENSE](LICENSE) applies to the **code** in this repository
 ## The VietMuong dataset is not in this repository
 
 The data are distributed separately on the Hugging Face Hub:
-<https://huggingface.co/datasets/LKAusagi/VietMuong>. The training script downloads
-them from there (pinned revision `d129079b0d8bf2c887f41ad879d884d9f3ad15c0`).
+<https://huggingface.co/datasets/LKAusagi/VietMuong>. Access requires accepting the
+terms below on that page. The training script downloads the data from there
+(pinned revision `d129079b0d8bf2c887f41ad879d884d9f3ad15c0`).
 
 ## Source of the data
 
@@ -25,8 +26,10 @@ not grant any rights to it.
 
 - The dataset is provided for **non-commercial research and education** on
   Vietnamese–Muong language technology.
-- Cite the paper (see [README](README.md#citation)) and the source dictionary above
-  when you use the data.
+- Credit the paper (citation details in the [README](README.md#citation) once
+  published) and the source dictionary above when you use the data.
+- Do not redistribute the data; point others to the dataset page, where access
+  requires accepting these terms.
 - Do not use the data to reconstruct, republish or sell the dictionary or a
   substitute for it.
 - Rights holders who object to the distribution of any part of the data can contact
