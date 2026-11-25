@@ -1,0 +1,20 @@
+# experiment outputs and checkpoints
+vimu_runs/
+_vimu_selftest/
+**/work/
+**/ckpt/
+*.safetensors
+*.bin
+*.pt
+
+# never commit data or predictions (see DATA_NOTICE.md); results/ only holds aggregates
+*.csv
+!results/*.csv
+*.xlsx
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
